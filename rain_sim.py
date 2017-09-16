@@ -127,13 +127,12 @@ class RainParticleBox:
 		#Add acceleration due to gravity
         not_terminal_yet = np.where(self.state[:, 3] > -1)
         for i in zip(not_terminal_yet):
-			self.state[i,3] -= self.state[i,4] * self.G * dt #add acceleration due to gravity
-        
+            self.state[i,3] -= self.state[i,4] * self.G * dt
     def add_wind(self):
 		# Add wind
         not_terminal_yet = np.where(self.state[:, 2] < 3)
         for i in zip(not_terminal_yet):
-			self.state[i,2] += 0.25 #Some arbitraty acceleration in the x direction	
+            self.state[i,2] += 0.25 #Some arbitraty acceleration in the x direction	
 #------------------------------------------------------------
 
 def init():
